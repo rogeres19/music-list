@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+    padding: 10;
+    margin: 10;
+    border-width: 1;
+    border-color: #ccc;
+    border-radius: 4;
+}
+
+.list-group-item {
+    padding: 15;
+    border-bottom-width: 1;
+    border-bottom-color: #eee;
+}
+
+.text-lg {
+    font-size: 18;
+}
+
+.text-sm {
+    font-size: 14;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
+
+.-primary {
+    background-color: #3b82f6;
+    color: white;
+}

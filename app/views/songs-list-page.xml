@@ -1,0 +1,31 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Lista de Músicas">
+        <ActionItem text="+" tap="{{ onAddTap }}" ios.position="right" />
+    </ActionBar>
+
+    <StackLayout class="p-4">
+        <GridLayout rows="auto, auto, *" columns="*">
+            <!-- Search Bar -->
+            <SearchBar row="0" hint="Buscar música..." text="{{ searchText }}" 
+                      textChange="{{ onSearchTextChanged }}" class="mb-2" />
+
+            <!-- Voice Type Filter -->
+            <StackLayout row="1" class="mb-2">
+                <Label text="Filtrar por voz:" class="text-lg mb-1" />
+                <ListPicker items="{{ voiceTypes }}" selectedIndex="{{ selectedVoiceTypeIndex }}" 
+                           class="mb-2" />
+            </StackLayout>
+
+            <!-- Songs List -->
+            <ListView row="2" items="{{ songs }}" itemTap="{{ onItemTap }}" class="list-group">
+                <ListView.itemTemplate>
+                    <StackLayout class="list-group-item">
+                        <Label text="{{ name }}" class="text-lg font-bold" />
+                        <Label text="{{ singer }}" class="text-sm text-gray-500" />
+                        <Label text="{{ voiceType }}" class="text-sm text-gray-500" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </GridLayout>
+    </StackLayout>
+</Page>

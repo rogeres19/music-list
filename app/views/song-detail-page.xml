@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Detalhes da Música">
+        <NavigationButton text="Voltar" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Nome:" class="text-lg font-bold" />
+            <TextField text="{{ song.name }}" class="input mb-2" />
+
+            <Label text="Autor:" class="text-lg font-bold" />
+            <TextField text="{{ song.author }}" class="input mb-2" />
+
+            <Label text="Tonalidade:" class="text-lg font-bold" />
+            <TextField text="{{ song.key }}" class="input mb-2" />
+
+            <Label text="Cantor:" class="text-lg font-bold" />
+            <TextField text="{{ song.singer }}" class="input mb-2" />
+
+            <Label text="Voz:" class="text-lg font-bold" />
+            <ListPicker items="{{ voiceTypes }}" selectedIndex="{{ selectedVoiceTypeIndex }}" 
+                       class="mb-2" />
+
+            <Label text="Tonalidade Original:" class="text-lg font-bold" />
+            <TextField text="{{ song.originalKey }}" class="input mb-2" />
+
+            <Button text="Salvar" tap="{{ onSaveTap }}" class="-primary mb-2" />
+        </StackLayout>
+    </ScrollView>
+</Page>
